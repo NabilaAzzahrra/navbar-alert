@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a href="#home" id="home-link">Home</a>
+        <a href="#news" id="news-link">News</a>
+        <a href="#contact" id="contact-link">Contact</a>
+        <a href="#about" id="about-link">About</a>
+    </div>
+
+    <div id="home" class="bg-sky-500 p-4 h-screen text-center">
+        Home
+    </div>
+    <div id="news" class="bg-emerald-500 p-4 h-screen text-center">
+        News
+    </div>
+    <div id="contact" class="bg-grey-200 p-4 h-screen text-center">
+        Contact
+    </div>
+    <div id="about" class="bg-red-500 p-4 h-screen text-center">
+        About
+    </div>
+</body>
+<script>
+    var homeLink = document.getElementById('home-link');
+    var newsLink = document.getElementById('news-link');
+    var contactLink = document.getElementById('contact-link');
+    var aboutLink = document.getElementById('about-link');
+
+    var homeDiv = document.getElementById('home');
+    var newsDiv = document.getElementById('news');
+    var contactDiv = document.getElementById('contact');
+    var aboutDiv = document.getElementById('about');
+
+    homeLink.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        homeDiv.style.display = 'block';
+
+        var otherDivs = [newsDiv, contactDiv, aboutDiv];
+        otherDivs.forEach(function (div) {
+            div.style.display = 'none';
+        });
+    });
+
+    newsLink.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        newsDiv.style.display = 'block';
+
+        var otherDivs = [homeDiv, contactDiv, aboutDiv];
+        otherDivs.forEach(function (div) {
+            div.style.display = 'none';
+        });
+    });
+
+    contactLink.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        contactDiv.style.display = 'block';
+
+        var otherDivs = [homeDiv, newsDiv, aboutDiv];
+        otherDivs.forEach(function (div) {
+            div.style.display = 'none';
+        });
+    });
+
+    aboutLink.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        aboutDiv.style.display = 'block';
+
+        var otherDivs = [homeDiv, newsDiv, contactDiv];
+        otherDivs.forEach(function (div) {
+            div.style.display = 'none';
+        });
+    });
+</script>
+
+</html>
